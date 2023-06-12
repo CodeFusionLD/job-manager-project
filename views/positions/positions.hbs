@@ -1,0 +1,20 @@
+<h1>Positions available :</h1>
+
+{{#each positions}}
+    <section class="positions">
+        <h2>{{this.title}}</h2>
+        <p>
+            
+            Company: {{this.company.name}} <br />
+            Job description: {{description}} <br />
+            My rating: {{this.jobRating}} <br />
+            <a href="/positions/{{this._id}}">More details</a>
+            <a href="/positions/{{this._id}}/edit">Edit</a>
+        </p>
+
+        <form method="POST" action="/positions/{{_id}}/delete">
+            <button>Delete</button>
+        </form>
+
+    </section>
+{{/each}}
