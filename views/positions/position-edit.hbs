@@ -1,15 +1,22 @@
 
-<h2>Edit the position: {{book.title}}</h2>
+<h2>Edit my job application</h2>
 
 <form method="POST" action="/positions/{{position._id}}/edit">
     <label> Title:
         <input type="text" name="title" value="{{position.title}}" />
     </label>
 
-  <label> Company:
-    <label name="company">
-      <input type="text" name="name"/>
+    <label> Company :
+        <select name="company">
+            {{#each companies}}
+                <option value={{this._id}}>
+                    {{this.name}}
+                </option>
+            {{/each}}
+        </select>
     </label>
+
+
 
     <label> Description:
         <textarea name="description" cols="30" rows="4">{{position.description}}</textarea>
