@@ -10,7 +10,7 @@ mongoose
   .then((x) => {
     console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`);
 
-    return Position.deleteMany({}); 
+  //  return Position.deleteMany({}); 
   })
   .then( (response) => {
     console.log(response);

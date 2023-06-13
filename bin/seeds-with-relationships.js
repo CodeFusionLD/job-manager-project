@@ -2,6 +2,40 @@ const mongoose = require("mongoose");
 const Position = require("../models/Position.model");
 const Company = require("../models/Company.model");
 
+const companies = [
+  {
+    name: "IBM",
+    address: {
+      street: "32 IronStreet",
+      postCode: 96684,
+      city: "Manchester"
+    }, 
+    country: "UK"
+  },
+  {
+    name: "IronHack",
+    address: {
+      street: "3 rue Maillard",
+      postCode: 75011,
+      city: "Paris",
+    }, 
+    country: "France"
+  },
+  {
+    name: "Microsoft",
+    address: {
+      street: "Walter-Gropius-Straße 5",
+      postCode: 80807,
+      city: "München"
+    }, 
+    country: "Germany"
+  },
+];
+
+const positions = [
+  // define positions here...
+];
+
 async function seedData() {
   try {
     // CONNECTION
@@ -19,14 +53,17 @@ async function seedData() {
     console.log(deletedPositions, deletedCompanies);
 
     // SEED COMPANIES
-    const companyCreated = await Company.insertMany(company);
-    console.log(`Number of companies created... ${companiesCreated.length} `);
+    const companiesCreated = await Company.insertMany(companies);
+    console.log(`Number of companies created... ${companiesCreated.length}`);
 
     const positionsWithIds = [];
 
     for (const positionObj of positions) {
       const companyName = positionObj.company;
       const companyDetails = await Company.findOne({ name: companyName });
+      if (!companyDetails) {
+        throw new Error(`Company '${companyName}' not found`);
+      }
       const companyId = companyDetails._id;
 
       const newPosition = {
@@ -40,8 +77,9 @@ async function seedData() {
     }
 
     const positionsCreated = await Position.insertMany(positionsWithIds);
-    console.log(`Number of positions created... ${positionsCreated.length} `);
+    console.log(`Number of positions created... ${positionsCreated.length}`);
 
+    // close connection after all operations are complete
     mongoose.connection.close();
   } catch (e) {
     console.log("error seeding data in DB....", e);
