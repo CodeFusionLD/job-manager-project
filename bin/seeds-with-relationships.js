@@ -4,7 +4,7 @@ const Company = require("../models/Company.model");
 
 const companies = [
   {
-    name: "IBM",
+    name: "Twitch",
     address: {
       street: "32 IronStreet",
       postCode: 96684,
@@ -30,11 +30,44 @@ const companies = [
     }, 
     country: "Germany"
   },
+  {
+    name: "IBM",
+    address: {
+    street: "Computer Road 231",
+    postCode: 90027,
+    city: "Los Angeles",
+    },
+    country: "USA",
+  },
+  {
+    name: "Google",
+    address: {
+    street: "Google Road 1",
+    postCode: 98927,
+    city: "San Francisco",
+    },
+    country: "USA",
+  },
+  {
+    name: "Meta",
+    address: {
+    street: "Meta Road 1",
+    postCode: 99023,
+    city: "San Francisco",
+    },
+    country: "USA",
+  },
+  {
+    name: "Space X",
+    address: {
+    street: "Rocket Road 1",
+    postCode: 99023,
+    city: "Los Angeles",
+    },
+    country: "USA",
+  }
 ];
 
-const positions = [
-  // define positions here...
-];
 
 async function seedData() {
   try {

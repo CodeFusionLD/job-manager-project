@@ -1,21 +1,31 @@
-<h1>Positions available :</h1>
+<h1>Jobs I applied to:</h1>
 
 {{#each positions}}
     <section class="positions">
-        <h2>{{this.title}}</h2>
-        <p>
-            
-            Company: {{company.name}} <br />
-            Job description: {{description}} <br />
-            Salary wish: {{salarywish}} <br />
-            My rating: {{this.jobrating}} <br />
-            <a href="/positions/{{this._id}}">More details</a>
-            <a href="/positions/{{this._id}}/edit">Edit</a>
-        </p>
 
-        <form method="POST" action="/positions/{{_id}}/delete">
+        <div class="card mb-3" style="max-width: 540px;">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img src="..." class="img-fluid rounded-start" alt="...">
+    </div>
+    <div class="cards col-md-8">
+      <div class="card-body cards">
+        <h3 class="card-title text-light"><b>{{this.title}}</b></h3>
+        <p class="card-text text-light"><b>Company:</b> {{company.name}} <br />
+            <b>Job description:</b> {{description}} <br />
+            <b>Salary wish:</b> {{salarywish}} <br />
+            <b>My rating:</b> {{this.jobrating}} <br />
+        </p>
+        <p class="card-text"><small class="text-body-secondary">{{timestamps}}</small></p>
+      </div class="cards">
+          <a class="btn more-details mt-3 mx-3 text-light " href="/positions/{{this._id}}">More details</a>
+        <a class="btn edit mt-3 mx-3 text-light" href="/positions/{{this._id}}/edit">Edit</a>
+        <form class="btn delete mt-3 mx-3 text-light" method="POST" action="/positions/{{_id}}/delete">
             <button>Delete</button>
         </form>
+    </div>
+  </div>
+</div>
 
     </section>
 {{/each}}

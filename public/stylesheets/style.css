@@ -5,6 +5,7 @@ body {
 
 a {
   color: #00b7ff;
+  text-decoration: none;
 }
 
 h1 {
@@ -33,4 +34,20 @@ nav a:last-child {
   font-weight: bold;
   border: 1px solid rgb(255, 213, 135);
   background-color: rgb(255, 213, 135);
+}
+
+.cards {
+  background-color: #0CC0DF;
+}
+
+.more-details {
+  background-color: #0097B2;
+}
+
+.edit {
+  background-color: #474444;
+}
+
+.delete {
+  background-color: #FF5757;
 }
