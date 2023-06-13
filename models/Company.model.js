@@ -3,8 +3,7 @@ const { Schema, model } = require('mongoose');
 const companySchema = new Schema(
     {
         name: String,
-        adress: {
-        type: String,
+        address: {
         street: String,
         postCode: Number,
         city: String,
