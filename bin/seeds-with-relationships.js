@@ -81,7 +81,7 @@ async function seedData() {
     );
 
     // DELETE DATA
-    const deletedPositions = await Position.deleteMany({});
+    //const deletedPositions = await Position.deleteMany({});
     const deletedCompanies = await Company.deleteMany({});
     console.log(deletedPositions, deletedCompanies);
 
