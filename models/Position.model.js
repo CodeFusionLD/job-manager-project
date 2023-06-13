@@ -8,8 +8,9 @@ const positionSchema = new Schema(
       type: mongoose.Schema.Types.ObjectId,
       ref: "Company"
     },
-    jobRating: Number,
-    hrEmail: String,
+    jobrating: Number,
+    salarywish: Number,
+    hremail: String,
   },
   {
     timestamps: true

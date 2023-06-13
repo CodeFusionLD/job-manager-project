@@ -28,7 +28,7 @@ router.get("/positions", (req, res, next) => {
 
 
 
-// CREATE
+// CREATE: Company in positions-create
 router.get("/positions/create", isLoggedIn, (req, res, next) => {
     Company.find()
         .then( companiesFromDB => {
@@ -42,15 +42,46 @@ router.get("/positions/create", isLoggedIn, (req, res, next) => {
 
 
 
-// CREATE
+// CREATE: Position in position-create
 router.post("/positions/create", isLoggedIn, (req, res, next) => {
 
     const newPosition = {
         title: req.body.title,
-        description: req.body.description,
         company: req.body.company,
-        rating: req.body.rating
+        description: req.body.description,
+        salarywish: req.body.salarywish,
+        jobrating: req.body.jobrating
     };
+
+    // Company.findOne({name: req.body.name})
+    // .then((existingCompany) => {
+    //     if (existingCompany) {
+    //         newPosition.company = existingCompany._id
+    //     }
+    //     else {
+
+    //         const newCompany = {
+    //             name: req.body.name,
+    //         };
+
+    //         Company.create(newCompany)
+    //             .then((createdCompany) => {
+    //                 newPosition.company = createdCompany._id;
+    //             })
+    //             .catch((e) => {
+    //                 console.log("error creating new company", e);
+    //                 next(e);
+    //             });
+    //     }
+            // const newCompany = {
+            //     name: req.body.name
+            // }
+            //         Company.create(newCompany)
+            //         const newCompany = {
+            //         name: req.body.name,
+            //         };
+        
+
 
     Position.create(newPosition)
         .then( (newPosition) => {
@@ -64,7 +95,7 @@ router.post("/positions/create", isLoggedIn, (req, res, next) => {
 
 
 
-// UPDATE
+// UPDATE: Company and Position details in position edit
 router.get('/positions/:positionId/edit', isLoggedIn, async (req, res, next) => {
     const { positionId } = req.params;
 
@@ -82,7 +113,7 @@ router.get('/positions/:positionId/edit', isLoggedIn, async (req, res, next) => 
 
 
 
-// UPDATE
+// UPDATE: Company and Position details in position edit
 router.post('/positions/:positionId/edit', isLoggedIn, (req, res, next) => {
     const { positionId } = req.params;
     const { title, description, company, rating } = req.body;
