@@ -2,6 +2,46 @@ const mongoose = require("mongoose");
 const Position = require("../models/Position.model");
 const Company = require("../models/Company.model");
 
+const company = [
+  {
+    name: "IBM",
+    adress: {
+    street: "Computer Road 231",
+    postCode: 90027,
+    city: "Los Angeles",
+    },
+    country: "USA",
+  },
+  {
+    name: "Google",
+    adress: {
+    street: "Google Road 1",
+    postCode: 98927,
+    city: "San Francisco",
+    },
+    country: "USA",
+  },
+  {
+    name: "Meta",
+    adress: {
+    street: "Meta Road 1",
+    postCode: 99023,
+    city: "San Francisco",
+    },
+    country: "USA",
+  },
+  {
+    name: "Space X",
+    adress: {
+    street: "Rocket Road 1",
+    postCode: 99023,
+    city: "Los Angeles",
+    },
+    country: "USA",
+  }
+
+];
+
 async function seedData() {
   try {
     // CONNECTION

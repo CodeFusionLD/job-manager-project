@@ -1,28 +1,27 @@
 
-<h2>Edit the book: {{book.title}}</h2>
+<h2>Edit the position: {{book.title}}</h2>
 
-<form method="POST" action="/books/{{book._id}}/edit">
+<form method="POST" action="/positions/{{position._id}}/edit">
     <label> Title:
-        <input type="text" name="title" value="{{book.title}}" />
+        <input type="text" name="title" value="{{position.title}}" />
     </label>
 
-    <label> Author:
-        <select name="author">
-            {{#each authors}}
-                <option value={{this._id}}>
-                    {{this.name}}
-                </option>
-            {{/each}}
-        </select>
+  <label> Company:
+    <label name="company">
+      <input type="text" name="name"/>
     </label>
 
     <label> Description:
-        <textarea name="description" cols="30" rows="4">{{book.description}}</textarea>
+        <textarea name="description" cols="30" rows="4">{{position.description}}</textarea>
     </label>
 
-    <label> Rate:
-        <input type="number" name="rating" min="1" max="10" value="{{book.rating}}" />
-    </label>
+    <label> Salary wish:
+    <input type="number" name="salarywish" min="1" max="10000000" />
+  </label>
+
+  <label> My rating:
+    <input type="number" name="jobrating" min="1" max="10" />
+  </label>
 
     <button>Save changes</button>
 </form>
