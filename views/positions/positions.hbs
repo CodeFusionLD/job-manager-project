@@ -24,8 +24,8 @@
       </div class="cards">
           <a class="btn more-details mt-3 mx-3 text-light " href="/positions/{{this._id}}">More details</a>
         <a class="btn edit mt-3 mx-3 text-light" href="/positions/{{this._id}}/edit">Edit</a>
-        <form  method="POST" action="/positions/{{_id}}/delete">
-            <button class="btn delete mt-3 mx-3 mb-3 text-light">Delete</button>
+        <form class="btn btn-danger mt-3 mx-3 text-light" method="POST" action="/positions/{{_id}}/delete">
+            <button >Delete</button>
         </form>
     </div>
   </div>
