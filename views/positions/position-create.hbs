@@ -2,17 +2,17 @@
 <h2>Create a job card</h2>
 </div>
 
-<div class="container-fluid job-board text-center borderline" style="max-width: 540px;">
+<div class="container-fluid job-board text-center borderline" style="max-width: 340px;">
 <form method="POST" action="/positions/create">
 <div>
-  <label> Job title:
-    <input type="text" name="title" class="form-control-lg container-fluid" id="exampleFormControlTextarea1" />
+  <label class="mt-3"> Job title:
+    <input type="text" name="title" class="form-control-lg container-fluid mt-1" id="exampleFormControlTextarea1" />
   </label>
 </div>
 <div>
-    <label> Company:
+    <label class="mt-3"> Company: <br>
 
-    <select name="company" class="form-control-lg" id="exampleFormControlInput1">
+    <select name="company" class="form-control-lg container-fluid mt-1" id="exampleFormControlInput1">
         {{#each companiesArr}}
           <option value={{this._id}}>
             {{this.name}}
@@ -23,17 +23,17 @@
   </label>
 </div>
 <div>  
-  <label> Job description:
-    <textarea name="description" cols="30" rows="4" class="form-control" id="exampleFormControlTextarea1"> </textarea>
+  <label class="mt-3"> Job description:
+    <textarea name="description" cols="30" rows="4" class="form-control-lg container-fluid mt-1" id="exampleFormControlTextarea1"> </textarea>
   </label>
 </div>
-    <label> Salary wish:
-    <input type="number" name="salarywish" min="1" max="10000000" class="form-control" id="exampleFormControlTextarea1"/>
+    <label class="mt-3"> Salary wish:
+    <input type="number" name="salarywish" min="1" max="10000000" class="form-control-lg container-fluid mt-1" id="exampleFormControlTextarea1"/>
   </label>
 <div>
-  <label> My rating:
-    <input type="number" name="jobrating" min="1" max="10" class="form-control" id="exampleFormControlTextarea1"/>
+  <label class="mt-3"> My rating:
+    <input type="number" name="jobrating" min="1" max="10" class="form-control-lg container-fluid mt-1" id="exampleFormControlTextarea1"/>
   </label>
 </div>
-  <button type="submit" class="btn btn-info text-light"> Add Job </button></form>
+  <button type="submit" class="btn btn-info text-light mt-3"> Add Job </button></form>
 </div>
