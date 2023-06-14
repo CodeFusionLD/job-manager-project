@@ -74,14 +74,14 @@ async function seedData() {
     // CONNECTION
     const MONGO_URI =
       process.env.MONGODB_URI ||
-      "mongodb://127.0.0.1:27017/job-manager-project";
+      "mongodb://127.0.0.1:27017/job-ninja";
     const conn = await mongoose.connect(MONGO_URI);
     console.log(
       `Connected to Mongo! Database name: "${conn.connections[0].name}"`
     );
 
     // DELETE DATA
-    //const deletedPositions = await Position.deleteMany({});
+    const deletedPositions = await Position.deleteMany({});
     const deletedCompanies = await Company.deleteMany({});
     console.log(deletedPositions, deletedCompanies);
 
