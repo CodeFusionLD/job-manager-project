@@ -1,11 +1,13 @@
+<div class="container-fluid job-board text-center" style="max-width: 540px;">
 <h1>List of companies</h1>
+</div>
 
 {{#each companies}}
 <section class="companies">
     <h2>{{this.name}}</h2>
     <p>
-     Address : {{this.address.name}} <br>
-     Country : {{this.country}}
+     {{this.adress}} <br>
+     {{this.country}}
     </p>
 </section>
 {{/each}}
