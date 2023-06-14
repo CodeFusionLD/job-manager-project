@@ -2,16 +2,17 @@
 <h2>Create a job card</h2>
 </div>
 
+<div class="container-fluid job-board text-center borderline" style="max-width: 540px;">
 <form method="POST" action="/positions/create">
 <div>
   <label> Job title:
-    <input type="text" name="title" />
+    <input type="text" name="title" class="form-control-lg container-fluid" id="exampleFormControlTextarea1" />
   </label>
 </div>
 <div>
     <label> Company:
 
-    <select name="company" class="form-control" id="exampleFormControlInput1">
+    <select name="company" class="form-control-lg" id="exampleFormControlInput1">
         {{#each companiesArr}}
           <option value={{this._id}}>
             {{this.name}}
@@ -27,12 +28,12 @@
   </label>
 </div>
     <label> Salary wish:
-    <input type="number" name="salarywish" min="1" max="10000000" />
+    <input type="number" name="salarywish" min="1" max="10000000" class="form-control" id="exampleFormControlTextarea1"/>
   </label>
 <div>
   <label> My rating:
-    <input type="number" name="jobrating" min="1" max="10" />
+    <input type="number" name="jobrating" min="1" max="10" class="form-control" id="exampleFormControlTextarea1"/>
   </label>
 </div>
   <button type="submit" class="btn btn-info text-light"> Add Job </button></form>
-
+</div>

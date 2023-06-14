@@ -55,3 +55,8 @@ nav a:last-child {
 .job-board {
   color: #0CC0DF;
 }
+
+.borderline {
+  border-color: #0CC0DF;;
+  border: 3px;
+}
