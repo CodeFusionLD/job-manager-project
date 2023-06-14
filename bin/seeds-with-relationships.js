@@ -1,6 +1,8 @@
 const mongoose = require("mongoose");
 const Position = require("../models/Position.model");
 const Company = require("../models/Company.model");
+require('dotenv').config(); // load environment variables from .env file
+
 
 const companies = [
   {
