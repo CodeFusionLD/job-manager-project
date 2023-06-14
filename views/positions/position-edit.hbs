@@ -1,34 +1,43 @@
 
+
+
+
+<div class="container-fluid job-board text-center" style="max-width: 540px;">
 <h2>Edit my job application</h2>
+</div>
 
+<div class="container-fluid job-board text-center borderline" style="max-width: 340px;">
 <form method="POST" action="/positions/{{position._id}}/edit">
-    <label> Title:
-        <input type="text" name="title" value="{{position.title}}" />
-    </label>
-
-    <label> Company :
-        <select name="company">
-            {{#each companies}}
-                <option value={{this._id}}>
-                    {{this.name}}
-                </option>
-            {{/each}}
-        </select>
-    </label>
-
-
-
-    <label> Description:
-        <textarea name="description" cols="30" rows="4">{{position.description}}</textarea>
-    </label>
-
-    <label> Salary wish:
-    <input type="number" name="salarywish" min="1" max="10000000" />
+<div>
+  <label class="mt-3"> Job title:
+    <input type="text" name="title" value="{{position.title}}" class="form-control-lg container-fluid mt-1" id="exampleFormControlTextarea1" />
   </label>
+</div>
+<div>
+    <label class="mt-3"> Company: <br>
 
-  <label> My rating:
-    <input type="number" name="jobrating" min="1" max="10" />
+    <select name="company" class="form-control-lg container-fluid mt-1" id="exampleFormControlInput1">
+        {{#each companiesArr}}
+          <option value={{this._id}}>
+            {{this.name}}
+          </option>
+        {{/each}}
+    </select>
+
   </label>
-
-    <button>Save changes</button>
-</form>
+</div>
+<div>  
+  <label class="mt-3"> Job description:
+    <textarea name="description" cols="30" rows="4" class="form-control-lg container-fluid mt-1" id="exampleFormControlTextarea1">{{position.description}}</textarea>
+  </label>
+</div>
+    <label class="mt-3"> Salary wish:
+    <input type="number" name="salarywish" value="{{position.salarywish}}" min="1" max="10000000" class="form-control-lg container-fluid mt-1" id="exampleFormControlTextarea1"/>
+  </label>
+<div>
+  <label class="mt-3"> My rating:
+    <input type="number" name="jobrating" value="{{position.jobrating}}" min="1" max="10" class="form-control-lg container-fluid mt-1" id="exampleFormControlTextarea1"/>
+  </label>
+</div>
+  <button type="submit" class="btn btn-info text-light mt-3"> Save changes </button></form>
+</div>
