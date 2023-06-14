@@ -1,3 +1,4 @@
+{{!-- <section class="card">
 <h1>{{title}}</h1>
 
 <hr />
@@ -11,6 +12,9 @@
 <h3>My rating:</h3>
 <p>{{jobrating}}</p>
 
+<h3>Salary wish</h3>
+<p>{{salarywish}}</p>
+
 <h3>Created:</h3>
 <p>{{createdAt}}</p>
 
@@ -18,6 +22,29 @@
 <p>{{updatedAt}}</p>
 
 <hr />
+</section>
+<a href="/positions">Back</a> --}}
 
-<a href="/positions">Back</a>
-
+<div class="card" style="width: 18rem;">
+  <img class="card-img-top" src="/images/buildingicon.jpg" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">{{title}}</h5>
+    <p class="card-text">Job description:
+        <p>{{description}}</p></p>
+  </div>
+  <ul class="list-group list-group-flush" >
+    <li class="list-group-item ">Company:
+        <p style="color: black;">{{company.name}}</p>
+    <li class="list-group-item">Salary wish
+<p>{{salarywish}}</p></li>
+    <li class="list-group-item" >My rating:
+<p>{{jobrating}}</p></li>
+ <li class="list-group-item">Created:
+<p>{{createdAt}}</p></li>
+ <li class="list-group-item">Last update:
+<p>{{updatedAt}}</p></li>
+  </ul>
+  <div class="card-body">
+    <a href="/positions" class="card-link">Back</a>
+  </div>
+</div>

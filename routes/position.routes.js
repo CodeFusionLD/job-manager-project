@@ -116,9 +116,9 @@ router.get('/positions/:positionId/edit', isLoggedIn, async (req, res, next) => 
 // UPDATE: Company and Position details in position edit
 router.post('/positions/:positionId/edit', isLoggedIn, (req, res, next) => {
     const { positionId } = req.params;
-    const { title, description, company, rating } = req.body;
+    const { title, description, company, jobrating, salarywish } = req.body;
 
-    Position.findByIdAndUpdate(positionId, { title, description, company, rating }, { new: true })
+    Position.findByIdAndUpdate(positionId, { title, description, company, jobrating, salarywish }, { new: true })
         .then(updatedPosition => res.redirect(`/positions/${updatedPosition.id}`)) // go to the details page to see the updates
         .catch(error => next(error));
 });
