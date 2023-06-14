@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const Position = require('../models/Position.model');
 
-const MONGO_URI = process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/job-manager-project';
+const MONGO_URI = process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/job-ninja';
 
 
 
