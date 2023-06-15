@@ -1,19 +1,19 @@
-
-<div class="container-fluid job-board text-center" style="max-width: 540px;">
+<section class="card text-white bg-dark mb-3" style="max-width: 30rem;">
+<div class="card-header text-center">
 <h2>Edit my job application</h2>
 </div>
 
-<div class="container-fluid job-board text-center borderline" style="max-width: 340px;">
+<div class="container-fluid job-board borderline" style="max-width: 340px;">
 <form method="POST" action="/positions/{{position._id}}/edit">
 <div>
-  <label class="mt-3"> Job title:
-    <input type="text" name="title" value="{{position.title}}" class="form-control-lg container-fluid mt-1" id="exampleFormControlTextarea1" />
+  <label class="card-title mt-3"> Job title:
+    <input type="text" name="title" value="{{position.title}}" class="form-control-lg container-fluid mt-1" />
   </label>
 </div>
 <div>
-    <label class="mt-3"> Company: <br>
+    <label class="card-title mt-3"> Company: <br>
 
-    <select name="company" class="form-control-lg container-fluid mt-1" id="exampleFormControlInput1">
+    <select name="company" class="form-control-lg container-fluid mt-1">
         {{#each companiesArr}}
           <option value={{this._id}}>
             {{this.name}}
@@ -24,18 +24,18 @@
   </label>
 </div>
 <div>  
-  <label class="mt-3"> Job description:
-    <textarea name="description" cols="30" rows="4" class="form-control-lg container-fluid mt-1" id="exampleFormControlTextarea1">{{position.description}}</textarea>
+  <label class="card-title mt-3"> Job description:
+    <textarea name="description" cols="30" rows="4" class="form-control-lg container-fluid mt-1">{{position.description}}</textarea>
   </label>
 </div>
-    <label class="mt-3"> Salary wish:
-    <input type="number" name="salarywish" value="{{position.salarywish}}" min="1" max="10000000" class="form-control-lg container-fluid mt-1" id="exampleFormControlTextarea1"/>
+    <label class="card-title mt-3"> Salary wish:
+    <input type="number" name="salarywish" value="{{position.salarywish}}" min="1" max="10000000" class="form-control-lg container-fluid mt-1"/>
   </label>
 <div>
-  <label class="mt-3"> My rating:
-    <input type="number" name="jobrating" value="{{position.jobrating}}" min="1" max="10" class="form-control-lg container-fluid mt-1" id="exampleFormControlTextarea1"/>
+  <label class="card-title mt-3"> My rating:
+    <input type="number" name="jobrating"  value="{{position.jobrating}}" min="1" max="10" class="form-control-lg container-fluid mt-1"/>
   </label>
 </div>
   <button type="submit" class="btn btn-info text-light mt-3"> Save changes </button></form>
 </div>
-
+</section>
