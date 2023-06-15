@@ -1,4 +1,5 @@
-<div class="container-fluid text-black text-center" style="max-width: 540px;">
+<div class="container-fluid text-black text-center card text-white bg-dark mb-3
+" style="max-width: 540px;">
 <h1>Jobs I applied to:</h1>
 </div >
 
@@ -23,7 +24,7 @@
         <p class="card-text"><small class="text-body-secondary">{{timestamps}}</small></p>
       </div class="cards ">
           <a class="btn more-details mt-3 mx-3 text-light " href="/positions/{{this._id}}">More details</a>
-        <a class="btn edit mt-3 mx-3 text-light" href="/positions/{{this._id}}/edit">Edit</a>
+        <a class="btn edit mt-3 mx-1 text-light" href="/positions/{{this._id}}/edit">Edit</a>
         <form  method="POST" action="/positions/{{_id}}/delete">
             <button class="btn btn-danger mt-3 mx-3 mb-3 text-light">Delete</button>
         </form>
