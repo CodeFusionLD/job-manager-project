@@ -19,12 +19,20 @@ router.get("/signup", (req, res, next) => {
 //POST /signup
 router.post("/signup", (req, res, next) => {
 
-    const {email, password} = req.body;
+    const {username, email, password} = req.body;
 
 
     // make sure users fill all mandatory fields:
-    if (!email || !password) {
-        res.render('auth/signup', { errorMessage: 'All fields are mandatory. Please provide your email and password.' });
+    if (!username) {
+        res.render('auth/signup', { errorMessage: 'All fields are mandatory. Please provide your username.' });
+        return; // finish execution of the current function
+    }
+    if (!email) {
+        res.render('auth/signup', { errorMessage: 'All fields are mandatory. Please provide your email.' });
+        return; // finish execution of the current function
+    }
+    if (!password) {
+        res.render('auth/signup', { errorMessage: 'All fields are mandatory. Please provide your password.' });
         return; // finish execution of the current function
     }
 
