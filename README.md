@@ -12,6 +12,7 @@ Install node dependencies:
 In the root file, create a .env file with the following lines:**
 
 PORT=3000
+
 SESS_SECRET=whateveryouwanttoput
 
 ## Run the application in your console:
