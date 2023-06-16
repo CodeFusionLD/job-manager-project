@@ -18,7 +18,7 @@ SESS_SECRET=whateveryouwanttoput
 ## Run the application in your console:
 
 **npm run dev
-Open a new tab in your browser and navigate to http://localhost:3000/.**
+Open a new tab in your browser and navigate to https://job-ninja.adaptable.app/.**
 
 **Start your Ninja quest!**
 
