@@ -1,56 +1,33 @@
+# Job Ninja
+Job Ninja is as flexible as a Ninja could/should be. It is a multi-device application that helps you manage your job browsing process: enter, track, and manage all your job applications in one environment.
+
+## Description
+Job Ninja is a web application built with Node.js and Express.js that allows users to manage their job applications effectively. The application provides features to create, update, and delete job positions, as well as view their details. Users can also manage companies associated with job positions.
+
+## How to Run the App
+Install node dependencies:
 
 
-Step 0: initial setup (ironlauncher)
+**npm install
+In the root file, create a .env file with the following lines:**
 
+PORT=3000
+SESS_SECRET=whateveryouwanttoput
 
-Step 1: create Book Model + seeds file
+## Run the application in your console:
 
+**npm run dev
+Open a new tab in your browser and navigate to http://localhost:3000/.**
 
-Step 2: (READ) display a list with all books in the DB
-- [x] Create a route (GET `/books`)
-- [x] Make a request to the DB --> Book.find()
-- [x] Create a view `books-list.hbs` (and pass the data from the database)
+**Start your Ninja quest!**
 
+## Demo
+Check out the live demo of Job Ninja: Job Ninja Demo
 
-Step 3: (READ) book details page
-- [x] Update `books-list.hbs` (add link to each book)
-- [x] Create a route (GET `/books/:bookId`)
-- [x] Make a request to the DB to get the details of book with id `bookId` --> Book.findById()
-- [x] Create view (`book-details.hbs`)
+## Features
+Display all positions: Retrieve and display all job positions from the database.
+Create a position: Add a new job position with title, description, company, salary wish, and job rating.
+Update position details: Modify the details of a specific job position, including title, description, company, salary wish, and job rating.
+Delete a position: Remove a job position from the database.
+View position details: Get the details of a specific job position.
 
-
-
-Step 4: (CREATE) functionality to create new books
-
-- Step 4.a: display a form to create new books
-  - [x] Create a route (GET `/books/create`)
-  - [x] Create a view (`book-create.hbs`)
-
-- Step 4.b: process the form and save new book in DB
-  - [x] Create a route (POST `/books/create`)
-  - [x] Make a request to the DB to save the new book --> Book.create()
-  - [x] After book is created, we will redirect to `/books` (we don't need to create an additional view)
-
-
-
-Step 5: (UPDATE) functionality to update a book
-
-- Step 5.a: display a pre-filled form to update a book
-  - [x] add link (eg. in book details page)
-  - [x] Create a route (GET `/books/:bookId/edit`)
-  - [x] Make a request to the DB --> Book.findById()
-  - [x] Create a view (`book-edit.hbs`) (and pass the data from the database)
-
-- Step 5.b: process form and update DB
-
-  - [x] Create a route (POST `/books/:bookId/edit`)
-  - [x] Query to the DB --> Book.findByIdAndUpdate(id, newBookDetails)
-  - [x] Redirect to the book details page
-
-
-Step 6: (DELETE) functionality to delete a book
-
-- [x] Add a button (ex. in the list of books) -it needs to be inside a form, so that we send a POST request.
-- [x] Create a route (POST `/books/:bookId/delete`)
-- [x] Query to DB --> Book.findByIdAndDelete(req.params.bookId)
-- [x] Redirect to `/books`
