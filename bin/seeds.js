@@ -1,26 +1,25 @@
-const mongoose = require('mongoose');
-const Position = require('../models/Position.model');
+const mongoose = require("mongoose");
+const Position = require("../models/Position.model");
 
-const MONGO_URI = process.env.MONGODB_URI || 'mongodb://127.0.0.1:27017/job-ninja';
-
-
+const MONGO_URI =
+  process.env.MONGODB_URI || "mongodb://127.0.0.1:27017/job-ninja";
 
 mongoose
   .connect(MONGO_URI)
   .then((x) => {
-    console.log(`Connected to Mongo! Database name: "${x.connections[0].name}"`);
+    console.log(
+      `Connected to Mongo! Database name: "${x.connections[0].name}"`
+    );
 
-  //  return Position.deleteMany({}); 
   })
-  .then( (response) => {
+  .then((response) => {
     console.log(response);
 
     return Position.insertMany(positions);
   })
-  .then(positionsFromDB => {
+  .then((positionsFromDB) => {
     console.log(`Created ${positionsFromDB.length} positions`);
 
-  
     mongoose.connection.close();
   })
   .catch((err) => {

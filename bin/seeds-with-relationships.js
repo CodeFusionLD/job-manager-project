@@ -1,8 +1,7 @@
 const mongoose = require("mongoose");
 const Position = require("../models/Position.model");
 const Company = require("../models/Company.model");
-require('dotenv').config(); // load environment variables from .env file
-
+require("dotenv").config(); // load environment variables from .env file
 
 const companies = [
   {
@@ -10,9 +9,9 @@ const companies = [
     address: {
       street: "32 IronStreet",
       postCode: 96684,
-      city: "Manchester"
-    }, 
-    country: "UK"
+      city: "Manchester",
+    },
+    country: "UK",
   },
   {
     name: "IronHack",
@@ -20,63 +19,61 @@ const companies = [
       street: "3 rue Maillard",
       postCode: 75011,
       city: "Paris",
-    }, 
-    country: "France"
+    },
+    country: "France",
   },
   {
     name: "Microsoft",
     address: {
       street: "Walter-Gropius-Straße 5",
       postCode: 80807,
-      city: "München"
-    }, 
-    country: "Germany"
+      city: "München",
+    },
+    country: "Germany",
   },
   {
     name: "IBM",
     address: {
-    street: "Computer Road 231",
-    postCode: 90027,
-    city: "Los Angeles",
+      street: "Computer Road 231",
+      postCode: 90027,
+      city: "Los Angeles",
     },
     country: "USA",
   },
   {
     name: "Google",
     address: {
-    street: "Google Road 1",
-    postCode: 98927,
-    city: "San Francisco",
+      street: "Google Road 1",
+      postCode: 98927,
+      city: "San Francisco",
     },
     country: "USA",
   },
   {
     name: "Meta",
     address: {
-    street: "Meta Road 1",
-    postCode: 99023,
-    city: "San Francisco",
+      street: "Meta Road 1",
+      postCode: 99023,
+      city: "San Francisco",
     },
     country: "USA",
   },
   {
     name: "Space X",
     address: {
-    street: "Rocket Road 1",
-    postCode: 99023,
-    city: "Los Angeles",
+      street: "Rocket Road 1",
+      postCode: 99023,
+      city: "Los Angeles",
     },
     country: "USA",
-  }
+  },
 ];
-
 
 async function seedData() {
   try {
     // CONNECTION
     const MONGO_URI =
-      process.env.MONGODB_URI ||
-      "mongodb://127.0.0.1:27017/job-ninja";
+      process.env.MONGODB_URI || "mongodb://127.0.0.1:27017/job-ninja";
     const conn = await mongoose.connect(MONGO_URI);
     console.log(
       `Connected to Mongo! Database name: "${conn.connections[0].name}"`

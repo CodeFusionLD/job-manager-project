@@ -53,34 +53,7 @@ router.post("/positions/create", isLoggedIn, (req, res, next) => {
         jobrating: req.body.jobrating
     };
 
-    // Company.findOne({name: req.body.name})
-    // .then((existingCompany) => {
-    //     if (existingCompany) {
-    //         newPosition.company = existingCompany._id
-    //     }
-    //     else {
 
-    //         const newCompany = {
-    //             name: req.body.name,
-    //         };
-
-    //         Company.create(newCompany)
-    //             .then((createdCompany) => {
-    //                 newPosition.company = createdCompany._id;
-    //             })
-    //             .catch((e) => {
-    //                 console.log("error creating new company", e);
-    //                 next(e);
-    //             });
-    //     }
-            // const newCompany = {
-            //     name: req.body.name
-            // }
-            //         Company.create(newCompany)
-            //         const newCompany = {
-            //         name: req.body.name,
-            //         };
-        
 
 
     Position.create(newPosition)
